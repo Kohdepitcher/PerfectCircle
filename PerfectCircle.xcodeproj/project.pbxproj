@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E82BA82D2AEDFA0A00EEBA0D /* DrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA82C2AEDFA0A00EEBA0D /* DrawingModel.swift */; };
+		E82BA8322AEE12F700EEBA0D /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E82BA82F2AEE12F700EEBA0D /* success.mp3 */; };
+		E82BA8332AEE12F700EEBA0D /* drawing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E82BA8302AEE12F700EEBA0D /* drawing.mp3 */; };
+		E82BA8342AEE12F700EEBA0D /* fail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E82BA8312AEE12F700EEBA0D /* fail.mp3 */; };
+		E82BA8382AEE30CB00EEBA0D /* BlinkViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA8372AEE30CB00EEBA0D /* BlinkViewModifier.swift */; };
+		E82BA83A2AEE335800EEBA0D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA8392AEE335800EEBA0D /* SettingsView.swift */; };
+		E82BA83D2AEE718800EEBA0D /* Setting in Frameworks */ = {isa = PBXBuildFile; productRef = E82BA83C2AEE718800EEBA0D /* Setting */; };
+		E82BA83F2AEE755C00EEBA0D /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA83E2AEE755C00EEBA0D /* AppSettings.swift */; };
+		E82BA8412AEE7CA700EEBA0D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA8402AEE7CA700EEBA0D /* Color+Extensions.swift */; };
 		E839E60A2AEB6CEC0052E7DF /* PerfectCircleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E6092AEB6CEC0052E7DF /* PerfectCircleApp.swift */; };
 		E839E60C2AEB6CEC0052E7DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E60B2AEB6CEC0052E7DF /* ContentView.swift */; };
 		E839E60E2AEB6CF50052E7DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E839E60D2AEB6CF50052E7DF /* Assets.xcassets */; };
@@ -34,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E82BA82C2AEDFA0A00EEBA0D /* DrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingModel.swift; sourceTree = "<group>"; };
+		E82BA82F2AEE12F700EEBA0D /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		E82BA8302AEE12F700EEBA0D /* drawing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drawing.mp3; sourceTree = "<group>"; };
+		E82BA8312AEE12F700EEBA0D /* fail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fail.mp3; sourceTree = "<group>"; };
+		E82BA8372AEE30CB00EEBA0D /* BlinkViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkViewModifier.swift; sourceTree = "<group>"; };
+		E82BA8392AEE335800EEBA0D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E82BA83E2AEE755C00EEBA0D /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		E82BA8402AEE7CA700EEBA0D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		E839E6062AEB6CEC0052E7DF /* PerfectCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E839E6092AEB6CEC0052E7DF /* PerfectCircleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectCircleApp.swift; sourceTree = "<group>"; };
 		E839E60B2AEB6CEC0052E7DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82BA83D2AEE718800EEBA0D /* Setting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +89,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E82BA82E2AEE12CC00EEBA0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E839E60D2AEB6CF50052E7DF /* Assets.xcassets */,
+				E82BA8302AEE12F700EEBA0D /* drawing.mp3 */,
+				E82BA8312AEE12F700EEBA0D /* fail.mp3 */,
+				E82BA82F2AEE12F700EEBA0D /* success.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E82BA8362AEE15BE00EEBA0D /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E82BA8372AEE30CB00EEBA0D /* BlinkViewModifier.swift */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
 		E839E5FD2AEB6CEC0052E7DF = {
 			isa = PBXGroup;
 			children = (
@@ -94,10 +131,15 @@
 		E839E6082AEB6CEC0052E7DF /* PerfectCircle */ = {
 			isa = PBXGroup;
 			children = (
+				E82BA8362AEE15BE00EEBA0D /* View Modifiers */,
+				E82BA82E2AEE12CC00EEBA0D /* Resources */,
+				E82BA82C2AEDFA0A00EEBA0D /* DrawingModel.swift */,
 				E839E6092AEB6CEC0052E7DF /* PerfectCircleApp.swift */,
 				E839E60B2AEB6CEC0052E7DF /* ContentView.swift */,
-				E839E60D2AEB6CF50052E7DF /* Assets.xcassets */,
 				E839E60F2AEB6CF50052E7DF /* Preview Content */,
+				E82BA8392AEE335800EEBA0D /* SettingsView.swift */,
+				E82BA83E2AEE755C00EEBA0D /* AppSettings.swift */,
+				E82BA8402AEE7CA700EEBA0D /* Color+Extensions.swift */,
 			);
 			path = PerfectCircle;
 			sourceTree = "<group>";
@@ -143,6 +185,9 @@
 			dependencies = (
 			);
 			name = PerfectCircle;
+			packageProductDependencies = (
+				E82BA83C2AEE718800EEBA0D /* Setting */,
+			);
 			productName = PerfectCircle;
 			productReference = E839E6062AEB6CEC0052E7DF /* PerfectCircle.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +260,9 @@
 				Base,
 			);
 			mainGroup = E839E5FD2AEB6CEC0052E7DF;
+			packageReferences = (
+				E82BA83B2AEE718800EEBA0D /* XCRemoteSwiftPackageReference "Setting" */,
+			);
 			productRefGroup = E839E6072AEB6CEC0052E7DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E839E6112AEB6CF50052E7DF /* Preview Assets.xcassets in Resources */,
+				E82BA8342AEE12F700EEBA0D /* fail.mp3 in Resources */,
+				E82BA8332AEE12F700EEBA0D /* drawing.mp3 in Resources */,
+				E82BA8322AEE12F700EEBA0D /* success.mp3 in Resources */,
 				E839E60E2AEB6CF50052E7DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +308,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82BA83A2AEE335800EEBA0D /* SettingsView.swift in Sources */,
+				E82BA8382AEE30CB00EEBA0D /* BlinkViewModifier.swift in Sources */,
+				E82BA83F2AEE755C00EEBA0D /* AppSettings.swift in Sources */,
 				E839E60C2AEB6CEC0052E7DF /* ContentView.swift in Sources */,
+				E82BA8412AEE7CA700EEBA0D /* Color+Extensions.swift in Sources */,
+				E82BA82D2AEDFA0A00EEBA0D /* DrawingModel.swift in Sources */,
 				E839E60A2AEB6CEC0052E7DF /* PerfectCircleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,11 +481,13 @@
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Perfect Circle";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -454,11 +512,13 @@
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Perfect Circle";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E82BA83B2AEE718800EEBA0D /* XCRemoteSwiftPackageReference "Setting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Setting";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E82BA83C2AEE718800EEBA0D /* Setting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E82BA83B2AEE718800EEBA0D /* XCRemoteSwiftPackageReference "Setting" */;
+			productName = Setting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E839E5FE2AEB6CEC0052E7DF /* Project object */;
 }
