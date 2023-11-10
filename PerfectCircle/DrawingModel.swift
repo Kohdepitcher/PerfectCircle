@@ -264,7 +264,8 @@ class DrawingModel {
         if canDraw {
             points.append(Point(point: dragValue.location,
                                 color: colorForAccuracy(accuracy: internalAccuracy),
-                                stroke: internalStroke
+                                stroke: internalStroke,
+                                accuracy: internalAccuracy
                                )
             )
         }
@@ -385,6 +386,8 @@ class DrawingModel {
         /// Clear points to wipe canvas.
         self.points = []
         
+//        var pathString = ""
+        
         var radiusCorrect: Double = 0
         var lastX: Double = 0
         var lastY: Double = 0
@@ -427,7 +430,10 @@ class DrawingModel {
     //            ])
                 
                 
-                self.points.append(Point(point: CGPoint(x: lastX, y: lastY), color: colorForAccuracy(accuracy: d), stroke: stroke))
+                
+                
+                
+                self.points.append(Point(point: CGPoint(x: lastX, y: lastY), color: colorForAccuracy(accuracy: d), stroke: stroke, accuracy: d))
                 
                 self.point.x = r
                 self.point.y = o
@@ -439,6 +445,26 @@ class DrawingModel {
                 
                 if count >= maxCount {
                     timer.invalidate()
+                    
+//                    for (index, point) in points.enumerated() {
+//                        
+//                        if let previousPoint = points[safe: index - 1] {
+//                            
+//                            var holder = point.accuracy - 0.75
+//                            
+//                            var color1: Double = 480 * holder
+//                            color1 = min(color1, 120)
+//                            color1 = max(color1, 0)
+//                            
+//                            pathString.append("""
+//                                        <path style="stroke:hsl(\(color1), 100%, 50%)" stroke-width="\(point.stroke)" d="M\(point.point.x) \(point.point.y) L\(previousPoint.point.x) \(previousPoint.point.y)"/>
+//                            """)
+//                        }
+//                        
+//                    }
+//                    
+//
+//                    print(pathString)
                 }
                 
                 
@@ -453,6 +479,7 @@ class DrawingModel {
         
         
         
+        
     }
     
     func stopDemoAnimation() {
@@ -460,6 +487,10 @@ class DrawingModel {
         self.demoTimer?.invalidate()
         
     }
+    
+//    func clearDrawing() {
+//        
+//    }
     
     
     

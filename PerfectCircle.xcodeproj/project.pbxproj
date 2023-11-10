@@ -16,6 +16,8 @@
 		E82BA83D2AEE718800EEBA0D /* Setting in Frameworks */ = {isa = PBXBuildFile; productRef = E82BA83C2AEE718800EEBA0D /* Setting */; };
 		E82BA83F2AEE755C00EEBA0D /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA83E2AEE755C00EEBA0D /* AppSettings.swift */; };
 		E82BA8412AEE7CA700EEBA0D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82BA8402AEE7CA700EEBA0D /* Color+Extensions.swift */; };
+		E8399B102AFDF75B0026BCD8 /* GlowBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8399B0F2AFDF75B0026BCD8 /* GlowBorder.swift */; };
+		E8399B132AFDFBE00026BCD8 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = E8399B122AFDFBE00026BCD8 /* ConfettiSwiftUI */; };
 		E839E60A2AEB6CEC0052E7DF /* PerfectCircleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E6092AEB6CEC0052E7DF /* PerfectCircleApp.swift */; };
 		E839E60C2AEB6CEC0052E7DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E60B2AEB6CEC0052E7DF /* ContentView.swift */; };
 		E839E60E2AEB6CF50052E7DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E839E60D2AEB6CF50052E7DF /* Assets.xcassets */; };
@@ -51,6 +53,7 @@
 		E82BA8392AEE335800EEBA0D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E82BA83E2AEE755C00EEBA0D /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		E82BA8402AEE7CA700EEBA0D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		E8399B0F2AFDF75B0026BCD8 /* GlowBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowBorder.swift; sourceTree = "<group>"; };
 		E839E6062AEB6CEC0052E7DF /* PerfectCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E839E6092AEB6CEC0052E7DF /* PerfectCircleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectCircleApp.swift; sourceTree = "<group>"; };
 		E839E60B2AEB6CEC0052E7DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8399B132AFDFBE00026BCD8 /* ConfettiSwiftUI in Frameworks */,
 				E82BA83D2AEE718800EEBA0D /* Setting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				E82BA8372AEE30CB00EEBA0D /* BlinkViewModifier.swift */,
+				E8399B0F2AFDF75B0026BCD8 /* GlowBorder.swift */,
 			);
 			path = "View Modifiers";
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			name = PerfectCircle;
 			packageProductDependencies = (
 				E82BA83C2AEE718800EEBA0D /* Setting */,
+				E8399B122AFDFBE00026BCD8 /* ConfettiSwiftUI */,
 			);
 			productName = PerfectCircle;
 			productReference = E839E6062AEB6CEC0052E7DF /* PerfectCircle.app */;
@@ -262,6 +268,7 @@
 			mainGroup = E839E5FD2AEB6CEC0052E7DF;
 			packageReferences = (
 				E82BA83B2AEE718800EEBA0D /* XCRemoteSwiftPackageReference "Setting" */,
+				E8399B112AFDFBE00026BCD8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = E839E6072AEB6CEC0052E7DF /* Products */;
 			projectDirPath = "";
@@ -310,6 +317,7 @@
 			files = (
 				E82BA83A2AEE335800EEBA0D /* SettingsView.swift in Sources */,
 				E82BA8382AEE30CB00EEBA0D /* BlinkViewModifier.swift in Sources */,
+				E8399B102AFDF75B0026BCD8 /* GlowBorder.swift in Sources */,
 				E82BA83F2AEE755C00EEBA0D /* AppSettings.swift in Sources */,
 				E839E60C2AEB6CEC0052E7DF /* ContentView.swift in Sources */,
 				E82BA8412AEE7CA700EEBA0D /* Color+Extensions.swift in Sources */,
@@ -658,6 +666,14 @@
 				minimumVersion = 1.0.1;
 			};
 		};
+		E8399B112AFDFBE00026BCD8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -665,6 +681,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E82BA83B2AEE718800EEBA0D /* XCRemoteSwiftPackageReference "Setting" */;
 			productName = Setting;
+		};
+		E8399B122AFDFBE00026BCD8 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8399B112AFDFBE00026BCD8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

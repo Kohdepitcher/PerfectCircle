@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct ContentView: View {
     
@@ -15,6 +16,8 @@ struct ContentView: View {
     /// Properties
     @State private var showingSettingsSheet = false
     @State var showingIntro = true
+    
+    @State private var confettiCounter = 0
 
  
     var body: some View {
@@ -99,9 +102,12 @@ struct ContentView: View {
             .overlay(alignment: .center) {
                 
                 
-                Circle()
-                    .fill(.white)
-                    .frame(width: 20)
+                
+                
+//                Circle()
+//                    .trim(from: 0.0, to: CGFloat(1.0))
+//                        .stroke(Color.red, lineWidth: 10)
+//                        .frame(width: 330, height: 330)
                 
                 HStack(alignment: .bottom, spacing: 0) {
                     
@@ -109,23 +115,25 @@ struct ContentView: View {
                     
                     Text("\(drawingModel.score != 0 ? String(format: "%g", Double(drawingModel.score / 10)) : "XX")")
                         .monospacedDigit()
-                        .font(.largeTitle)
+//                        .font(.largeTitle)
+                        .font(.system(size: 55))
                         .fontDesign(.rounded)
                         .bold()
                         .foregroundStyle(drawingModel.scoreColor)
                     
                     Spacer()
-                        .frame(width: 35)
+                        .frame(width: 24)
                     
                     Text("\(drawingModel.score != 0 ? String(format: "%g", Double(Double(drawingModel.score) * 0.1).truncatingRemainder(dividingBy: 1) * 10) : "X")%")
                         .monospacedDigit()
-                        .font(.title)
+//                        .font(.title)
+                        .font(.system(size: 45))
                         .fontDesign(.rounded)
                         .bold()
                         .foregroundStyle(drawingModel.scoreColor)
                     
                 }
-                .padding(.bottom, 5)
+                .padding(.bottom, 20)
                 
                 Text(drawingModel.message)
                     .font(.title)
@@ -133,16 +141,9 @@ struct ContentView: View {
                     .shadow(radius: 10)
                     .padding(.top, 100)
                     
-                if !drawingModel.scoreMessage.isEmpty {
-                    Text(drawingModel.scoreMessage)
-                        .font(.title)
-                        .bold()
-                        .shadow(radius: 10)
-                        .padding(.top, 100)
-                        .blinking(duration: 0.6)
-                }
+
                 
-                VStack(spacing: 50) {
+                VStack(spacing: 70) {
                     
                     Text("Draw a cirlce")
                     Text("around this")
@@ -163,14 +164,20 @@ struct ContentView: View {
                     .bold()
                     .opacity(showingIntro ? 1 : 0)
                     .padding(.bottom, 250)
+                    .glowBorder(color: Color.black, lineWidth: 10)
                     
-                
+                Circle()
+                    .fill(.white)
+                    .frame(width: 20)
+                    .confettiCannon(counter: self.$confettiCounter)
                 
                 Button(action: {
                     drawingModel.stopDemoAnimation()
                     withAnimation(.spring) {
                         showingIntro = false
                     }
+                    
+                    drawingModel.points = []
                 }) {
                     Text("GO")
                         .font(.largeTitle)
@@ -183,6 +190,11 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.white)
                 .scaleEffect(showingIntro ? CGSize(width: 1.0, height: 1.0) : CGSize.zero, anchor: .center)
+                
+                
+//                Image(systemName: "hand.point.up.fill")
+//                    .font(.largeTitle)
+//                    .offset(x: 150)
             }
             
             VStack(alignment: .center, spacing: 20) {
@@ -195,6 +207,7 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontDesign(.rounded)
                         .bold()
+                        .glowBorder(color: Color.black, lineWidth: 10)
                     
                     Spacer()
                 }
@@ -212,6 +225,15 @@ struct ContentView: View {
                     .bold()
                     .foregroundStyle(colorForAccuracy(accuracy: Double(drawingModel.bestScore) * 0.001))
                 
+                if !drawingModel.scoreMessage.isEmpty {
+                    Text(drawingModel.scoreMessage)
+                        .font(.title)
+                        .bold()
+                        .shadow(radius: 10)
+//                        .padding(.top, 100)
+                        .blinking(duration: 0.6)
+                }
+                
                 Spacer()
                 
             }
@@ -222,6 +244,7 @@ struct ContentView: View {
                         .fontDesign(.rounded)
                         .bold()
                 }
+                
                 .tint(.white)
                 .padding(.leading)
                 .sheet(isPresented: $showingSettingsSheet) {
@@ -236,6 +259,10 @@ struct ContentView: View {
         
         .onChange(of: drawingModel.bestScore) {
             appSettings.bestScore = drawingModel.bestScore
+            
+            if drawingModel.bestScore > confettiCounter {
+                self.confettiCounter = drawingModel.bestScore
+            }
         }
         
     }
@@ -254,6 +281,7 @@ struct Point {
     var point: CGPoint
     var color: Color
     var stroke: CGFloat
+    var accuracy: CGFloat
 }
 
 

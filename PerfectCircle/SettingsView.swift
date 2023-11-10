@@ -25,7 +25,7 @@ struct SettingsView: View {
                         VStack {
                             
                             HStack {
-                                Text("Original web game by Matt Round and Neal Agarwal. This is an experimental recreation for SwiftUI.")
+                                Text("Original web game by Matt Round and Neal Agarwal")
                             }
                             .bold()
                             .font(.title3)
