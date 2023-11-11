@@ -19,7 +19,7 @@ class DrawingModel {
     public var points: [Point] = []
     
     /// Tracks the total size of the canvas for later calculations.
-    public var frameSize = CGSize(width: 500, height: 500)
+    public var frameSize = CGSize(width: 1000, height: 1000)
     
     /// Tracks the message to be shown under the dot on the canvas.
     public var message: String = ""
@@ -433,7 +433,7 @@ class DrawingModel {
                 
                 
                 
-                self.points.append(Point(point: CGPoint(x: lastX, y: lastY), color: colorForAccuracy(accuracy: d), stroke: stroke, accuracy: d))
+                self.points.append(Point(point: CGPoint(x: lastX, y: lastY), color: colorForAccuracy(accuracy: d), stroke: stroke + 5.0, accuracy: d))
                 
                 self.point.x = r
                 self.point.y = o
@@ -462,8 +462,8 @@ class DrawingModel {
 //                        }
 //                        
 //                    }
-//                    
-//
+                    
+
 //                    print(pathString)
                 }
                 
