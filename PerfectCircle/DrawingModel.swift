@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import AVFoundation
+import CoreGraphics
 
 @Observable
 class DrawingModel {
@@ -52,8 +53,9 @@ class DrawingModel {
     /// Tracks if the user has drawn a valid circle
     public var isValid = false
     
+    public private(set) var isDrawing = false
+    
     /// Private Properties
-    private var isDrawing = false
     private var point: CGPoint = .zero
     private var time: Date = .init()
     private var speed: CGFloat = 0
@@ -153,8 +155,37 @@ class DrawingModel {
     
     init() {
         
+        /// Pull the best score from app settings so that it persists between launches
         self.bestScore = AppSettings().bestScore
         
+        /// Setup AVPlayers
+        guard let failPath = Bundle.main.path(forResource: "fail.mp3", ofType:nil) else { return }
+        let failURL = URL(fileURLWithPath: failPath)
+
+        do {
+            failSoundEffect = try AVAudioPlayer(contentsOf: failURL)
+        } catch {
+            // couldn't load file :(
+        }
+        
+        guard let successPath = Bundle.main.path(forResource: "success.mp3", ofType:nil) else { return }
+        let successURL = URL(fileURLWithPath: successPath)
+
+        do {
+            successSoundEffect = try AVAudioPlayer(contentsOf: successURL)
+        } catch {
+            // couldn't load file :(
+        }
+        
+        guard let drawingPath = Bundle.main.path(forResource: "drawing.mp3", ofType:nil) else { return }
+        let drawingURL = URL(fileURLWithPath: drawingPath)
+
+        do {
+            drawingSoundEffect = try AVAudioPlayer(contentsOf: drawingURL)
+            drawingSoundEffect?.volume = 0.2
+        } catch {
+            // couldn't load file :(
+        }
     }
     
     func drawMove(dragValue: DragGesture.Value) {
@@ -309,7 +340,7 @@ class DrawingModel {
             drawingCompleted()
         }
         
-        print(drawnAnglesOfCircle)
+//        print(drawnAnglesOfCircle)
         
     }
     
@@ -486,6 +517,8 @@ class DrawingModel {
         
         self.demoTimer?.invalidate()
         
+        self.points = []
+        
     }
     
 //    func clearDrawing() {
@@ -498,46 +531,46 @@ class DrawingModel {
         
         if AppSettings().soundEffectEnabled == false { return }
         
-        guard let path = Bundle.main.path(forResource: "fail.mp3", ofType:nil) else { return }
-        let url = URL(fileURLWithPath: path)
-
-        do {
-            failSoundEffect = try AVAudioPlayer(contentsOf: url)
+//        guard let path = Bundle.main.path(forResource: "fail.mp3", ofType:nil) else { return }
+//        let url = URL(fileURLWithPath: path)
+//
+//        do {
+//            failSoundEffect = try AVAudioPlayer(contentsOf: url)
             failSoundEffect?.play()
-        } catch {
-            // couldn't load file :(
-        }
+//        } catch {
+//            // couldn't load file :(
+//        }
     }
     
     private func playSuccessSound() {
         
         if AppSettings().soundEffectEnabled == false { return }
         
-        guard let path = Bundle.main.path(forResource: "success.mp3", ofType:nil) else { return }
-        let url = URL(fileURLWithPath: path)
-
-        do {
-            successSoundEffect = try AVAudioPlayer(contentsOf: url)
+//        guard let path = Bundle.main.path(forResource: "success.mp3", ofType:nil) else { return }
+//        let url = URL(fileURLWithPath: path)
+//
+//        do {
+//            successSoundEffect = try AVAudioPlayer(contentsOf: url)
             successSoundEffect?.play()
-        } catch {
-            // couldn't load file :(
-        }
+//        } catch {
+//            // couldn't load file :(
+//        }
     }
     
     private func playDrawingSound() {
         
         if AppSettings().soundEffectEnabled == false { return }
         
-        guard let path = Bundle.main.path(forResource: "drawing.mp3", ofType:nil) else { return }
-        let url = URL(fileURLWithPath: path)
-
-        do {
-            drawingSoundEffect = try AVAudioPlayer(contentsOf: url)
-            drawingSoundEffect?.volume = 0.2
+//        guard let path = Bundle.main.path(forResource: "drawing.mp3", ofType:nil) else { return }
+//        let url = URL(fileURLWithPath: path)
+//
+//        do {
+//            drawingSoundEffect = try AVAudioPlayer(contentsOf: url)
+//            drawingSoundEffect?.volume = 0.2
             drawingSoundEffect?.play()
-        } catch {
-            // couldn't load file :(
-        }
+//        } catch {
+//            // couldn't load file :(
+//        }
     }
     
     private func stopDrawingSound() {
