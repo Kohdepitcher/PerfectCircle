@@ -15,14 +15,37 @@ struct SettingsView: View {
     
     var body: some View {
         
-        SettingStack {
+        SettingStack(isSearchable: false) {
             
             SettingPage(title: "Settings") {
+                
+//                SettingGroup() {
+                    SettingCustomView {
+                        HStack {
+                            
+                            Spacer()
+                            
+                            Text("PERFECT CIRCLE")
+                                .multilineTextAlignment(.center)
+                                .font(.largeTitle)
+                                .fontDesign(.rounded)
+                                .bold()
+                                .strokeBorder(color: .black, lineWidth: 3)
+                                .padding()
+                            
+                            Spacer()
+                        }
+//                            .background(.black)
+//                            .padding(.bottom)
+                    }
+//                }
                 
                 SettingGroup() {
                     SettingCustomView {
                         
                         VStack {
+                            
+                            
                             
                             HStack {
                                 Text("Original web game by Matt Round and Neal Agarwal")
