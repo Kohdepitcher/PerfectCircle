@@ -13,7 +13,7 @@ struct DrawingView: View {
     
     var body: some View {
         
-        ZStack {
+        ZStack(alignment: .center) {
             
             Canvas { context, size in
                 

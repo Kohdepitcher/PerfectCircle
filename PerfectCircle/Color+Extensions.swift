@@ -87,7 +87,9 @@ extension Color {
         let brightness = accuracy + 0.8
         
         
-        return Color(hue: hue, saturation: saturation, brightness: brightness)
+        
+        
+        return Color(UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1))
     }
 
 

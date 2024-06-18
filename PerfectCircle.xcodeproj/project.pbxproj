@@ -25,6 +25,13 @@
 		E839E61B2AEB6CF60052E7DF /* PerfectCircleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E61A2AEB6CF60052E7DF /* PerfectCircleTests.swift */; };
 		E839E6252AEB6CF60052E7DF /* PerfectCircleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E6242AEB6CF60052E7DF /* PerfectCircleUITests.swift */; };
 		E839E6272AEB6CF60052E7DF /* PerfectCircleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E839E6262AEB6CF60052E7DF /* PerfectCircleUITestsLaunchTests.swift */; };
+		E8A48D162B78F458004E6D26 /* PNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A48D152B78F458004E6D26 /* PNG.swift */; };
+		E8CD82D92B6E7E2100EC610B /* 8-BIT WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E8CD82D82B6E7E2100EC610B /* 8-BIT WONDER.TTF */; };
+		E8CD82DD2B6E85A400EC610B /* 8-bit-wonder-neue.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8CD82DC2B6E85A400EC610B /* 8-bit-wonder-neue.ttf */; };
+		E8CD82DF2B6E883000EC610B /* retro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8CD82DE2B6E883000EC610B /* retro.ttf */; };
+		E8CD82E12B6F3A6400EC610B /* StrokeBorderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD82E02B6F3A6400EC610B /* StrokeBorderModifier.swift */; };
+		E8CD82E32B6F918300EC610B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD82E22B6F918300EC610B /* DrawingView.swift */; };
+		E8CD82E62B6F9F5300EC610B /* ScreenshotCopyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CD82E52B6F9F5300EC610B /* ScreenshotCopyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +71,14 @@
 		E839E6202AEB6CF60052E7DF /* PerfectCircleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectCircleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E839E6242AEB6CF60052E7DF /* PerfectCircleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectCircleUITests.swift; sourceTree = "<group>"; };
 		E839E6262AEB6CF60052E7DF /* PerfectCircleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectCircleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E8A48D152B78F458004E6D26 /* PNG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNG.swift; sourceTree = "<group>"; };
+		E8CD82D62B6E751700EC610B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E8CD82D82B6E7E2100EC610B /* 8-BIT WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT WONDER.TTF"; sourceTree = "<group>"; };
+		E8CD82DC2B6E85A400EC610B /* 8-bit-wonder-neue.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-bit-wonder-neue.ttf"; sourceTree = "<group>"; };
+		E8CD82DE2B6E883000EC610B /* retro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = retro.ttf; sourceTree = "<group>"; };
+		E8CD82E02B6F3A6400EC610B /* StrokeBorderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeBorderModifier.swift; sourceTree = "<group>"; };
+		E8CD82E22B6F918300EC610B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		E8CD82E52B6F9F5300EC610B /* ScreenshotCopyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCopyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +111,9 @@
 		E82BA82E2AEE12CC00EEBA0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E8CD82DE2B6E883000EC610B /* retro.ttf */,
+				E8CD82DC2B6E85A400EC610B /* 8-bit-wonder-neue.ttf */,
+				E8CD82D82B6E7E2100EC610B /* 8-BIT WONDER.TTF */,
 				E839E60D2AEB6CF50052E7DF /* Assets.xcassets */,
 				E82BA8302AEE12F700EEBA0D /* drawing.mp3 */,
 				E82BA8312AEE12F700EEBA0D /* fail.mp3 */,
@@ -109,6 +127,7 @@
 			children = (
 				E82BA8372AEE30CB00EEBA0D /* BlinkViewModifier.swift */,
 				E8399B0F2AFDF75B0026BCD8 /* GlowBorder.swift */,
+				E8CD82E02B6F3A6400EC610B /* StrokeBorderModifier.swift */,
 			);
 			path = "View Modifiers";
 			sourceTree = "<group>";
@@ -136,6 +155,7 @@
 		E839E6082AEB6CEC0052E7DF /* PerfectCircle */ = {
 			isa = PBXGroup;
 			children = (
+				E8CD82D62B6E751700EC610B /* Info.plist */,
 				E82BA8362AEE15BE00EEBA0D /* View Modifiers */,
 				E82BA82E2AEE12CC00EEBA0D /* Resources */,
 				E82BA82C2AEDFA0A00EEBA0D /* DrawingModel.swift */,
@@ -145,6 +165,9 @@
 				E82BA8392AEE335800EEBA0D /* SettingsView.swift */,
 				E82BA83E2AEE755C00EEBA0D /* AppSettings.swift */,
 				E82BA8402AEE7CA700EEBA0D /* Color+Extensions.swift */,
+				E8CD82E22B6F918300EC610B /* DrawingView.swift */,
+				E8CD82E52B6F9F5300EC610B /* ScreenshotCopyView.swift */,
+				E8A48D152B78F458004E6D26 /* PNG.swift */,
 			);
 			path = PerfectCircle;
 			sourceTree = "<group>";
@@ -287,8 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E839E6112AEB6CF50052E7DF /* Preview Assets.xcassets in Resources */,
+				E8CD82DF2B6E883000EC610B /* retro.ttf in Resources */,
 				E82BA8342AEE12F700EEBA0D /* fail.mp3 in Resources */,
 				E82BA8332AEE12F700EEBA0D /* drawing.mp3 in Resources */,
+				E8CD82D92B6E7E2100EC610B /* 8-BIT WONDER.TTF in Resources */,
+				E8CD82DD2B6E85A400EC610B /* 8-bit-wonder-neue.ttf in Resources */,
 				E82BA8322AEE12F700EEBA0D /* success.mp3 in Resources */,
 				E839E60E2AEB6CF50052E7DF /* Assets.xcassets in Resources */,
 			);
@@ -316,13 +342,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E82BA83A2AEE335800EEBA0D /* SettingsView.swift in Sources */,
+				E8A48D162B78F458004E6D26 /* PNG.swift in Sources */,
 				E82BA8382AEE30CB00EEBA0D /* BlinkViewModifier.swift in Sources */,
+				E8CD82E12B6F3A6400EC610B /* StrokeBorderModifier.swift in Sources */,
 				E8399B102AFDF75B0026BCD8 /* GlowBorder.swift in Sources */,
 				E82BA83F2AEE755C00EEBA0D /* AppSettings.swift in Sources */,
 				E839E60C2AEB6CEC0052E7DF /* ContentView.swift in Sources */,
 				E82BA8412AEE7CA700EEBA0D /* Color+Extensions.swift in Sources */,
+				E8CD82E32B6F918300EC610B /* DrawingView.swift in Sources */,
 				E82BA82D2AEDFA0A00EEBA0D /* DrawingModel.swift in Sources */,
 				E839E60A2AEB6CEC0052E7DF /* PerfectCircleApp.swift in Sources */,
+				E8CD82E62B6F9F5300EC610B /* ScreenshotCopyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,11 +514,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PerfectCircle/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PerfectCircle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Perfect Circle";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -503,6 +534,8 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kohdepitcher.PerfectCircle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -515,11 +548,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PerfectCircle/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PerfectCircle/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Perfect Circle";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -534,6 +568,8 @@
 				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kohdepitcher.PerfectCircle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,7 +582,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -566,7 +602,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -585,7 +621,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -603,7 +639,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 8K7VH6BQ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;

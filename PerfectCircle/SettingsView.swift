@@ -13,11 +13,13 @@ struct SettingsView: View {
     @Environment(\.appSettings) private var appSettings
     @Environment(\.drawingModel) private var drawingModel
     
+    @State private var showingResetWarning = false
+    
     var body: some View {
         
         SettingStack(isSearchable: false) {
             
-            SettingPage(title: "Settings") {
+            SettingPage(title: "") {
                 
 //                SettingGroup() {
                     SettingCustomView {
@@ -135,13 +137,25 @@ struct SettingsView: View {
                     }
                     
                     SettingButton(title: "Reset Score", indicator: "arrow.counterclockwise") {
-                        drawingModel.bestScore = 0
+                        showingResetWarning.toggle()
                     }
+                    
+                   
                     
                 }
                 
             }
             
+        }
+        
+        
+        .alert("Reset Score", isPresented: $showingResetWarning) {
+            Button("OK", role: .destructive) {
+                drawingModel.bestScore = 0
+            }
+            Button("Cancel", role: .cancel) {
+                showingResetWarning = false
+            }
         }
         
     }

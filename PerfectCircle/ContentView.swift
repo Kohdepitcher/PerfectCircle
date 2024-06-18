@@ -19,7 +19,8 @@ struct ContentView: View {
     
     @State private var confettiCounter = 0
     
-    @State var capture: CGImage?
+    @State var capture: UIImage?
+    @State var showing = false
 
  
     var body: some View {
@@ -27,6 +28,7 @@ struct ContentView: View {
         ZStack {
             
             DrawingView()
+                .ignoresSafeArea()
             
             .background(
                 ZStack {
@@ -168,6 +170,7 @@ struct ContentView: View {
                 
                 
             }
+            .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 10) {
                 
@@ -249,11 +252,37 @@ struct ContentView: View {
             .opacity(showingIntro ? 0 : 1)
             .padding(.top)
             
-//            .safeAreaInset(edge: .bottom) {
-//                if let capture {
-//                    ShareLink(item: Image(uiImage: UIImage(cgImage: capture)), preview: SharePreview("Perfect Circle", image: Image(uiImage: UIImage(cgImage: capture))))
-//                }
-//            }
+            .safeAreaInset(edge: .bottom) {
+                if let capture {
+                    
+                    if let photoData = capture.pngData() {
+                        
+                        ShareLink(item: PNG(photoData),
+                                  preview: SharePreview("Perfect Circle",
+                                                        image: Image(uiImage: capture))
+                        ) {
+                            
+                            Label("Share Drawing", systemImage: "square.and.arrow.up")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(.blue.gradient.shadow(.drop(radius: 1, x: 2, y: 2)), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                            
+                        }
+                        
+                        .transition(.opacity)
+                    }
+                    
+//                    Button(action: { showing.toggle() }) {
+//                        Text("Share")
+//                    }
+//                    
+//                    .sheet(isPresented: $showing) {
+//                        Image(uiImage: capture)
+//                            .padding()
+//                    }
+                    
+                }
+            }
             
         }
         
@@ -263,24 +292,47 @@ struct ContentView: View {
             if drawingModel.bestScore > confettiCounter {
                 self.confettiCounter = drawingModel.bestScore
                 
-//                capture = ImageRenderer(content: 
-//                                            ScreenshotCopyView()
-//                                            .environment(\.drawingModel, self.drawingModel)
-//                ).cgImage
+//                let renderer = ImageRenderer(content:
+//                                            
+//                    ScreenshotCopyView(points: drawingModel.points,
+//                                       score: drawingModel.score,
+//                                       scoreColor: drawingModel.scoreColor)
+//                        .frame(width: drawingModel.frameSize.width,
+//                               height: drawingModel.frameSize.height)
+//                            .environment(\.colorScheme, .dark)
+//                                        
+//                )
+//                
+//                renderer.scale = UIScreen.main.scale
+//                renderer.colorMode = .extendedLinear
+//                
+//                self.capture = renderer.uiImage ?? UIImage()
             }
             
             
         }
         
-//        .onChange(of: drawingModel.isDrawing) {
-//            if drawingModel.isDrawing {
-//                capture = nil
-//            }
-//        }
+        .onChange(of: drawingModel.isDrawing) {
+            if drawingModel.isDrawing {
+                capture = nil
+            }
+        }
         
         .confettiCannon(counter: self.$confettiCounter)
         
     }
+    
+//    @MainActor
+//    func render () -> UIImage {
+//        
+//        let renderer = ImageRenderer(content:
+//                                        ScreenshotCopyView(points: drawingModel.points, score: drawingModel.score, scoreColor: drawingModel.scoreColor)
+//                .frame(width: drawingModel.frameSize.width, height: drawingModel.frameSize.height)
+//            )
+//        
+//        renderer.render(rasterizationScale: <#T##CGFloat#>, renderer: <#T##(CGSize, (CGContext) -> Void) -> Void#>)
+//        
+//    }
     
     
     @ViewBuilder
